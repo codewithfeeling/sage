@@ -8,7 +8,7 @@ import {
 } from './resources/js/build/wordpress'
 
 export default defineConfig({
-  base: '/app/themes/sage/public/build/',
+  base: '/app/themes/cwf-sage/public/build/',
   plugins: [
     tailwindcss(),
     laravel({

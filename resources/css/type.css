@@ -1,0 +1,15 @@
+h1, h2, h3 {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-2xl lg:text-3xl xl:text-4xl mb-8;
+}
+
+h2 {
+  @apply text-xl lg:text-2xl xl:text-3xl my-4;
+}
+
+ul:not(.nav) {
+  @apply mb-8;
+}
