@@ -23,8 +23,40 @@
       }
     },
     "spacing": {
+      "margin": true,
       "padding": true,
-      "units": ["px", "%", "em", "rem", "vw", "vh"]
+      "customSpacingSize": true,
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh"
+      ],
+      "defaultSpacingSizes": false,
+      "spacingSizes": [
+        {
+          "size": "clamp(1rem, 0.545rem + 1.939vw, 2rem)",
+          "slug": "20",
+          "name": "Small"
+        },
+        {
+          "size": "clamp(1.5rem, 0.818rem + 2.909vw, 3rem)",
+          "slug": "40",
+          "name": "Medium"
+        },
+        {
+          "size": "clamp(2rem, 1.091rem + 3.879vw, 4rem)",
+          "slug": "60",
+          "name": "Large"
+        },
+        {
+          "size": "clamp(2rem, 0.636rem + 5.818vw, 5rem)",
+          "slug": "80",
+          "name": "X-Large"
+        }
+      ]
     },
     "typography": {
       "defaultFontSizes": false,

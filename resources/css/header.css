@@ -1,0 +1,47 @@
+.page-header {
+  @apply sr-only;
+}
+
+.tax-role .page-header {
+  @apply not-sr-only px-4 lg:px-8 lowercase font-bold text-xl;
+}
+
+.header .navigation {
+  @apply opacity-0 lg:opacity-100 fixed inset-0 z-10 h-screen lg:h-auto bg-black/80 lg:backdrop-blur-none lg:bg-transparent backdrop-blur-sm items-center justify-center text-white lg:text-black text-3xl lg:text-xl text-center hidden lg:flex lg:static;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.show-nav .header .navigation {
+  @apply flex;
+  animation: fade-in 0.3s ease-in-out forwards;
+}
+
+.home .menu-home {
+  @apply hidden;
+}
+
+.menu-item {
+  @apply relative lg:opacity-60;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  @apply opacity-100;
+}
+
+.current-page-ancestor.menu-item {
+  @apply opacity-100;
+}
+
+.is-discography .header .navigation,
+.has-photographs .header .navigation {
+  @apply border-b border-grey-3 h-full;
+}

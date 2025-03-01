@@ -17,10 +17,14 @@ use Illuminate\Support\Facades\Vite;
 add_filter('block_editor_settings_all', function ($settings) {
     $style = Vite::asset('resources/css/editor.css');
 
+    // $settings['styles'][] = [
+    //     'css' => Vite::isRunningHot()
+    //         ? "@import url('{$style}')"
+    //         : Vite::content('resources/css/editor.css'),
+    // ];
+
     $settings['styles'][] = [
-        'css' => Vite::isRunningHot()
-            ? "@import url('{$style}')"
-            : Vite::content('resources/css/editor.css'),
+        'css' => "@import url('{$style}')"
     ];
 
     return $settings;
@@ -47,6 +51,23 @@ add_filter('admin_head', function () {
     echo Vite::withEntryPoints([
         'resources/js/editor.js',
     ])->toHtml();
+});
+
+/**
+ * Send some config to JS
+ *
+ * @return void
+ */
+
+ add_action('wp_print_footer_scripts', function () {
+    $config = [
+        'siteUrl' => get_site_url(),
+        'photosUrl' => get_page_by_path('photographs')?->guid,
+        'isStudioPage' => is_page('the-shelter'),
+        'photoId' => $_GET['photo_id'] ?? null,
+    ];
+
+    echo '<script>var LeoConfig = ' . json_encode($config) . ';</script>';
 });
 
 /**
@@ -109,6 +130,8 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'discography_navigation' => __('Discography Navigation', 'sage'),
+        'photos_navigation' => __('Photography Navigation', 'sage'),
     ]);
 
     /**

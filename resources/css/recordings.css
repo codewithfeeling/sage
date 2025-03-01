@@ -1,0 +1,105 @@
+.recordings-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-8 p-4 xl:p-8;
+}
+
+.related .recordings-grid {
+  @apply !px-0;
+}
+
+.recording-thumb .image-container {
+  @apply max-h-[20rem] w-full aspect-square mb-2;
+}
+
+.recording-thumb .image-container img {
+  @apply w-auto h-full object-left-top object-contain shadow-xl;
+}
+
+.recording-thumb .info p,
+.recording-thumb .info h3 {
+  @apply text-base xl:!text-base mb-0;
+}
+
+.recording-thumb h3 {
+  @apply italic;
+}
+
+.recording-image img {
+  @apply max-h-full w-full object-cover;
+}
+
+.recording-content img {
+  @apply w-full object-cover my-8;
+}
+
+.cover-art {
+  @apply shadow-lg sticky top-8;
+}
+
+.role-nav {
+  @apply -ml-4;
+}
+
+.role-nav li {
+  @apply border-r border-grey-3;
+}
+
+.role-nav li:last-child {
+  @apply border-0;
+}
+
+.role-nav li > a {
+  @apply px-4 block text-grey-3 hover:text-black transition;
+}
+
+.role-link {
+  @apply text-base;
+}
+
+.is-provider-spotify {
+  @apply px-8 hidden;
+}
+
+.is-provider-youtube {
+  @apply aspect-video my-12;
+}
+
+.is-provider-youtube .wp-block-embed__wrapper {
+  @apply aspect-video;
+}
+
+.is-provider-youtube .wp-block-embed__wrapper iframe {
+  @apply w-full h-full;
+}
+
+.single-recording .is-provider-spotify {
+  @apply block px-0 my-8 max-w-md;
+}
+
+.show-playlist .is-provider-spotify {
+  @apply block w-[56rem] shrink-0 py-8;
+}
+
+/* .wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before {
+  @apply !pt-[100%];
+} */
+
+.single-recording
+  .wp-block-embed.is-type-rich.is-provider-spotify.wp-block-embed-spotify.wp-embed-aspect-21-9.wp-has-aspect-ratio
+  .wp-block-embed__wrapper::before {
+  @apply !pt-[34%];
+}
+
+.single-recording
+  .wp-embed-responsive
+  .wp-embed-aspect-21-9
+  .wp-block-embed__wrapper::before {
+  @apply !pt-[34%];
+}
+
+.wp-block-post-featured-image img {
+  @apply shadow-xl;
+}
+
+blockquote + iframe {
+  @apply mt-12;
+}

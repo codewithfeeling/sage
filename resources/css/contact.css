@@ -1,0 +1,30 @@
+@layer base {
+  .contact .main {
+    @apply p-4 lg:p-8;
+  }
+
+  .contact .main h2 {
+    @apply font-bold;
+  }
+
+  .contact .wp-block-post-featured-image {
+    @apply fixed inset-0 -z-10;
+  }
+
+  .contact .wp-block-post-featured-image img {
+    @apply object-cover object-center h-full w-full;
+  }
+
+  .contact .wp-block-group,
+  .contact .wp-block-column {
+    @apply w-full md:w-auto;
+  }
+
+  .contact .wp-block-group {
+    @apply inline-block p-8 xl:p-12 bg-white/75 backdrop-blur-md rounded-md shadow-2xl;
+  }
+
+  .contact .main a {
+    @apply border-b border-black;
+  }
+}

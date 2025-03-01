@@ -1,0 +1,33 @@
+@layer base {
+  body {
+    @apply xl:text-xl;
+  }
+
+  h1 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  h2 {
+    @apply text-base lg:text-xl font-bold mb-4;
+  }
+
+  .photo-group h2 {
+    @apply mb-0;
+  }
+
+  p {
+    @apply text-base xl:text-xl;
+  }
+
+  .main p:not(.credits) > a {
+    @apply border-b border-black hover:border-red transition-all duration-300;
+  }
+
+  p:not([class*='mb-']):not(.credits) {
+    @apply mb-4;
+  }
+
+  p.credits {
+    @apply absolute -z-10 bottom-0 right-0 h-8 pl-4 pr-8 flex items-center gap-1 text-sm bg-white/75 hover:bg-white/100;
+  }
+}

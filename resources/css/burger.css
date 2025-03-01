@@ -1,0 +1,58 @@
+#nav-toggle {
+  @apply w-12 h-12 p-2 lg:hidden;
+}
+
+.bar-group {
+  @apply relative transition duration-300 ease-in-out transform will-change-transform;
+}
+
+.bar-group.top {
+  @apply -translate-y-1;
+}
+
+.bar-group.bottom {
+  @apply translate-y-1;
+}
+
+.bar-group.top .bar:first-child {
+  @apply origin-right;
+}
+
+.bar-group.top .bar:last-child {
+  @apply left-1/2 origin-left;
+}
+
+.bar-group.bottom .bar:first-child {
+  @apply origin-right;
+}
+
+.bar-group.bottom .bar:last-child {
+  @apply left-1/2 origin-left;
+}
+
+/* NAV VISIBLE */
+.show-nav .bar-group.top {
+  @apply translate-y-0;
+}
+
+.show-nav .bar-group.bottom {
+  @apply translate-y-0;
+}
+
+.show-nav .bar-group.top .bar:first-child,
+.show-nav .bar-group.bottom .bar:last-child {
+  @apply rotate-45;
+}
+
+.show-nav .bar-group.top .bar:last-child,
+.show-nav .bar-group.bottom .bar:first-child {
+  @apply -rotate-45;
+}
+
+.bar {
+  @apply absolute block w-1/2 h-[2px] bg-black transition duration-300 ease-in-out transform will-change-transform;
+}
+
+.show-nav .bar {
+  @apply bg-white;
+}

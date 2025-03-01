@@ -1,0 +1,3 @@
+.nav {
+  @apply flex flex-col gap-8 lg:flex-row;
+}

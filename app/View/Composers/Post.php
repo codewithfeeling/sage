@@ -24,9 +24,24 @@ class Post extends Composer
      */
     public function override()
     {
+        $shareTitle = $title = $this->title();
+
+        if (is_singular('recording')) {
+            $artists = get_the_terms(get_the_ID(), 'artist');
+            $artist = array_shift($artists);
+            $shareTitle .= " by {$artist->name}";
+            $excerpt = 'Leo Abrahams: ' . strip_tags(get_the_term_list(get_the_ID(), 'role', '', ' / ', ''));
+        } else {
+            $excerpt = has_excerpt()  ? get_the_excerpt() : null;
+        }
+
         return [
-            'title' => $this->title(),
+            'title' => $title,
+            'shareTitle' => $shareTitle,
             'pagination' => $this->pagination(),
+            'excerpt' => $excerpt,
+            'featured_image' => get_the_post_thumbnail(get_the_ID(), 'large'),
+            'featured_image_url' => get_the_post_thumbnail_url(get_the_ID(), 'large'),
         ];
     }
 
@@ -49,9 +64,14 @@ class Post extends Composer
             return __('Latest Posts', 'sage');
         }
 
+        if (is_tax('role')) {
+            return get_term_by('slug', get_query_var('role'), 'role')->name . ' Credits';
+        }
+
         if (is_archive()) {
             return get_the_archive_title();
         }
+
 
         if (is_search()) {
             return sprintf(
@@ -77,7 +97,7 @@ class Post extends Composer
     {
         return wp_link_pages([
             'echo' => 0,
-            'before' => '<p>'.__('Pages:', 'sage'),
+            'before' => '<p>' . __('Pages:', 'sage'),
             'after' => '</p>',
         ]);
     }

@@ -1,0 +1,33 @@
+@layer base {
+  .lockup {
+    @apply fixed top-0 left-0 w-full h-[50dvh] lg:h-full p-4 lg:p-8 -z-10 translate-y-[calc(var(--translate-y)*-1px)] transform will-change-transform blur-[calc(var(--translate-y)*0.02px)];
+  }
+
+  .lockup .wp-block-image {
+    @apply h-[50dvh] lg:!h-full;
+  }
+
+  .lockup img {
+    @apply h-full object-cover opacity-[calc(1-var(--translate-y)*0.001)];
+  }
+
+  .the-shelter .columns-1 .wp-block-image {
+    @apply lg:h-[calc(100dvh-6rem)] lg:overflow-hidden;
+  }
+
+  .the-shelter .page-header + .wp-block-group {
+    @apply text-white absolute bottom-0 left-1/2 py-12;
+  }
+
+  .the-shelter .page-header h1 {
+    @apply text-4xl xl:text-4xl text-right w-full pr-8 font-normal;
+  }
+
+  .the-shelter .page-header + .wp-block-group {
+    @apply opacity-[calc(1-var(--translate-y)*0.0025)];
+  }
+
+  .the-shelter .page-header + .wp-block-group h1 {
+    @apply font-bold;
+  }
+}

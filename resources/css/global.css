@@ -1,0 +1,7 @@
+a {
+  @apply no-underline;
+}
+
+body:not(.home) {
+  @apply pt-16;
+}

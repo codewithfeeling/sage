@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'FSIndustrie';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/FSIndustrie-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'FSIndustrie';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/FSIndustrie-Italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'FSIndustrie';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/FSIndustrie-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'FSIndustrieCd';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/FSIndustrieCd-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'FSIndustrieCd';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/FSIndustrieCd-Italic.woff) format('woff');
+}
